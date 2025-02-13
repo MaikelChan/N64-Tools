@@ -1,30 +1,17 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundListTool", "N64SoundTool\N64SoundListTool.vcproj", "{5748BF74-AD68-4C69-8575-4B2BC6AD3122}"
-	ProjectSection(ProjectDependencies) = postProject
-		{DFDA2F16-6435-4F72-B419-E3A42E8D88E4} = {DFDA2F16-6435-4F72-B419-E3A42E8D88E4}
-		{BEF41E17-9E5F-44B9-8AEA-54DDABB378A7} = {BEF41E17-9E5F-44B9-8AEA-54DDABB378A7}
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundListTool", "N64SoundTool\N64SoundListTool.vcxproj", "{5748BF74-AD68-4C69-8575-4B2BC6AD3122}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundListToolPTB", "N64SoundListToolPTB\N64SoundListToolPTB.vcproj", "{0736803F-0743-4FA8-A535-09428785911A}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BEF41E17-9E5F-44B9-8AEA-54DDABB378A7} = {BEF41E17-9E5F-44B9-8AEA-54DDABB378A7}
-		{5748BF74-AD68-4C69-8575-4B2BC6AD3122} = {5748BF74-AD68-4C69-8575-4B2BC6AD3122}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundListToolPTB", "N64SoundListToolPTB\N64SoundListToolPTB.vcxproj", "{0736803F-0743-4FA8-A535-09428785911A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundListToolENU", "N64SoundListToolENU\N64SoundListToolENU.vcproj", "{FED1797D-5749-4231-8B01-C245D75ECFE6}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BEF41E17-9E5F-44B9-8AEA-54DDABB378A7} = {BEF41E17-9E5F-44B9-8AEA-54DDABB378A7}
-		{5748BF74-AD68-4C69-8575-4B2BC6AD3122} = {5748BF74-AD68-4C69-8575-4B2BC6AD3122}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundListToolENU", "N64SoundListToolENU\N64SoundListToolENU.vcxproj", "{FED1797D-5749-4231-8B01-C245D75ECFE6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundLibrary", "N64SoundLibrary\N64SoundToolLibrary.vcproj", "{BEF41E17-9E5F-44B9-8AEA-54DDABB378A7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundLibrary", "N64SoundLibrary\N64SoundToolLibrary.vcxproj", "{BEF41E17-9E5F-44B9-8AEA-54DDABB378A7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundToolReader", "N64SoundToolReader\N64SoundToolReader.vcproj", "{DFDA2F16-6435-4F72-B419-E3A42E8D88E4}"
-	ProjectSection(ProjectDependencies) = postProject
-		{BEF41E17-9E5F-44B9-8AEA-54DDABB378A7} = {BEF41E17-9E5F-44B9-8AEA-54DDABB378A7}
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "N64SoundToolReader", "N64SoundToolReader\N64SoundToolReader.vcxproj", "{DFDA2F16-6435-4F72-B419-E3A42E8D88E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <ProjectName>N64SoundLibrary</ProjectName>
+    <ProjectGuid>{BEF41E17-9E5F-44B9-8AEA-54DDABB378A7}</ProjectGuid>
+    <RootNamespace>N64SoundToolLibrary</RootNamespace>
+    <Keyword>MFCDLLProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>17.0.35707.178</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>SOUNDTOOL_EXPORTS;WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>SOUNDTOOL_EXPORTS;WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AcclaimDEANAudioDecompression.cpp" />
+    <ClCompile Include="BlastCorpsLZBDecoder.cpp" />
+    <ClCompile Include="BlitzDecoder.cpp" />
+    <ClCompile Include="CalcCRC.cpp" />
+    <ClCompile Include="DecompressClayfighter.cpp" />
+    <ClCompile Include="EASportsDecoder.cpp" />
+    <ClCompile Include="EBBigDecompression.cpp" />
+    <ClCompile Include="ExciteBikeSAMAudioDecompression.cpp" />
+    <ClCompile Include="FightingForceAudioDecompression.cpp" />
+    <ClCompile Include="flzh_rn.cpp" />
+    <ClCompile Include="GECompression.cpp" />
+    <ClCompile Include="H20Decoder.cpp" />
+    <ClCompile Include="Kobe2ADPCMDecoder.cpp" />
+    <ClCompile Include="LZARIDecoder.cpp" />
+    <ClCompile Include="MaddenAudioDecompression.cpp" />
+    <ClCompile Include="MidwayDecoder.cpp" />
+    <ClCompile Include="MidwayLZ.cpp" />
+    <ClCompile Include="MKMythologiesDecode.cpp" />
+    <ClCompile Include="MORTDecoder.cpp" />
+    <ClCompile Include="n643docompression.cpp" />
+    <ClCompile Include="N64AIFCAudio.cpp" />
+    <ClCompile Include="NamcoAudioDecompression.cpp" />
+    <ClCompile Include="NinDec.cpp" />
+    <ClCompile Include="NintendoEncoder.cpp" />
+    <ClCompile Include="QuakeDecoder.cpp" />
+    <ClCompile Include="rnc_deco.cpp" />
+    <ClCompile Include="SharedFunctions.cpp" />
+    <ClCompile Include="SnoDecoder.cpp" />
+    <ClCompile Include="SnowboardKidsDecoder.cpp" />
+    <ClCompile Include="SPRallyAudioDecompression.cpp" />
+    <ClCompile Include="StarFox64AudioDecompression.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SupermanDecoder.cpp" />
+    <ClCompile Include="SydneyDecoder.cpp" />
+    <ClCompile Include="TetrisphereDecoder.cpp" />
+    <ClCompile Include="TigDecoder.cpp" />
+    <ClCompile Include="TopGearHyperbikeAudioDecompression.cpp" />
+    <ClCompile Include="TwistedSnowboardingAudioDecompression.cpp" />
+    <ClCompile Include="ViewpointDecoder.cpp" />
+    <ClCompile Include="WDCAudioDecompression.cpp" />
+    <ClCompile Include="yay0.cpp" />
+    <ClCompile Include="yaz0.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AcclaimDEANAudioDecompression.h" />
+    <ClInclude Include="BlastCorpsLZBDecoder.h" />
+    <ClInclude Include="BlitzDecoder.h" />
+    <ClInclude Include="CalcCRC.h" />
+    <ClInclude Include="DecompressClayfighter.h" />
+    <ClInclude Include="EASportsDecoder.h" />
+    <ClInclude Include="EBBigDecompression.h" />
+    <ClInclude Include="ExciteBikeSAMAudioDecompression.h" />
+    <ClInclude Include="FightingForceAudioDecompression.h" />
+    <ClInclude Include="flzh_rn.h" />
+    <ClInclude Include="GECompression.h" />
+    <ClInclude Include="H20Decoder.h" />
+    <ClInclude Include="Kobe2ADPCMDecoder.h" />
+    <ClInclude Include="LZARIDecoder.h" />
+    <ClInclude Include="MaddenAudioDecompression.h" />
+    <ClInclude Include="MidwayDecoder.h" />
+    <ClInclude Include="MidwayLZ.h" />
+    <ClInclude Include="MKMythologiesDecode.h" />
+    <ClInclude Include="MORTDecoder.h" />
+    <ClInclude Include="n643docompression.h" />
+    <ClInclude Include="N64AIFCAudio.h" />
+    <ClInclude Include="NamcoAudioDecompression.h" />
+    <ClInclude Include="NinDec.h" />
+    <ClInclude Include="NintendoEncoder.h" />
+    <ClInclude Include="QuakeDecoder.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="rnc_deco.h" />
+    <ClInclude Include="SharedFunctions.h" />
+    <ClInclude Include="SnoDecoder.h" />
+    <ClInclude Include="SnowboardKidsDecoder.h" />
+    <ClInclude Include="SoundToolExports.h" />
+    <ClInclude Include="SPRallyAudioDecompression.h" />
+    <ClInclude Include="StarFox64AudioDecompression.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SupermanDecoder.h" />
+    <ClInclude Include="SydneyDecoder.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TetrisphereDecoder.h" />
+    <ClInclude Include="TigDecoder.h" />
+    <ClInclude Include="TopGearHyperbikeAudioDecompression.h" />
+    <ClInclude Include="TwistedSnowboardingAudioDecompression.h" />
+    <ClInclude Include="ViewpointDecoder.h" />
+    <ClInclude Include="WDCAudioDecompression.h" />
+    <ClInclude Include="yay0.h" />
+    <ClInclude Include="yaz0.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="N64SoundToolLibrary.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\N64SoundToolLibrary.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
