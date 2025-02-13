@@ -3179,17 +3179,23 @@ bool CN64AIFCAudio::ExtractRawSound(CString mainFolder, ALBank* alBank, int inst
 						return false;
 					}
 
+					constexpr uint16_t numberChannels = 1;
+					constexpr uint16_t bitsPerSample = 16;
+					constexpr uint16_t bytesPerBlock = numberChannels * bitsPerSample / 8;
+					const uint32_t chunkSize = 0x2C + (pcmSamples.size() * 2) + 0x2C - 0x8;
+					const uint32_t sampleRate = alBank->inst[instrument]->samplerate;
+					const uint32_t bytesPerSecond = sampleRate * bytesPerBlock;
+
 					unsigned char* wavHeader = new unsigned char[0x28];
 
 					wavHeader[0x0] = 0x52;
 					wavHeader[0x1] = 0x49;
 					wavHeader[0x2] = 0x46;
 					wavHeader[0x3] = 0x46;
-					unsigned long chunkSize = 0x2C + (pcmSamples.size() * 2) + 0x2C - 0x8;
-					wavHeader[0x4] = ((chunkSize >> 0) & 0xFF);
-					wavHeader[0x5] = ((chunkSize >> 8) & 0xFF);
-					wavHeader[0x6] = ((chunkSize >> 16) & 0xFF);
-					wavHeader[0x7] = ((chunkSize >> 24) & 0xFF);
+					wavHeader[0x4] = (chunkSize >> 0) & 0xFF;
+					wavHeader[0x5] = (chunkSize >> 8) & 0xFF;
+					wavHeader[0x6] = (chunkSize >> 16) & 0xFF;
+					wavHeader[0x7] = (chunkSize >> 24) & 0xFF;
 					wavHeader[0x8] = 0x57;
 					wavHeader[0x9] = 0x41;
 					wavHeader[0xA] = 0x56;
@@ -3204,20 +3210,20 @@ bool CN64AIFCAudio::ExtractRawSound(CString mainFolder, ALBank* alBank, int inst
 					wavHeader[0x13] = 0x00;
 					wavHeader[0x14] = 0x01; //WAVE_FORMAT_PCM
 					wavHeader[0x15] = 0x00;
-					wavHeader[0x16] = 0x02; //2 channels
-					wavHeader[0x17] = 0x00;
-					wavHeader[0x18] = (((unsigned long)alBank->inst[instrument]->samplerate >> 0) & 0xFF);
-					wavHeader[0x19] = (((unsigned long)alBank->inst[instrument]->samplerate >> 8) & 0xFF);
-					wavHeader[0x1A] = (((unsigned long)alBank->inst[instrument]->samplerate >> 16) & 0xFF);
-					wavHeader[0x1B] = (((unsigned long)alBank->inst[instrument]->samplerate >> 24) & 0xFF);
-					wavHeader[0x1C] = ((((unsigned long)alBank->inst[instrument]->samplerate * 2 * 2) >> 0) & 0xFF);
-					wavHeader[0x1D] = ((((unsigned long)alBank->inst[instrument]->samplerate * 2 * 2) >> 8) & 0xFF);
-					wavHeader[0x1E] = ((((unsigned long)alBank->inst[instrument]->samplerate * 2 * 2) >> 16) & 0xFF);
-					wavHeader[0x1F] = ((((unsigned long)alBank->inst[instrument]->samplerate * 2 * 2) >> 24) & 0xFF);
-					wavHeader[0x20] = 0x04;
-					wavHeader[0x21] = 0x00;
-					wavHeader[0x22] = 0x10;
-					wavHeader[0x23] = 0x00;
+					wavHeader[0x16] = (numberChannels >> 0) & 0xFF;
+					wavHeader[0x17] = (numberChannels >> 8) & 0xFF;
+					wavHeader[0x18] = (sampleRate >> 0) & 0xFF;
+					wavHeader[0x19] = (sampleRate >> 8) & 0xFF;
+					wavHeader[0x1A] = (sampleRate >> 16) & 0xFF;
+					wavHeader[0x1B] = (sampleRate >> 24) & 0xFF;
+					wavHeader[0x1C] = (bytesPerSecond >> 0) & 0xFF;
+					wavHeader[0x1D] = (bytesPerSecond >> 8) & 0xFF;
+					wavHeader[0x1E] = (bytesPerSecond >> 16) & 0xFF;
+					wavHeader[0x1F] = (bytesPerSecond >> 24) & 0xFF;
+					wavHeader[0x20] = (bytesPerBlock >> 0) & 0xFF;
+					wavHeader[0x21] = (bytesPerBlock >> 8) & 0xFF;
+					wavHeader[0x22] = (bitsPerSample >> 0) & 0xFF;
+					wavHeader[0x23] = (bitsPerSample >> 8) & 0xFF;
 					wavHeader[0x24] = 0x64;
 					wavHeader[0x25] = 0x61;
 					wavHeader[0x26] = 0x74;
