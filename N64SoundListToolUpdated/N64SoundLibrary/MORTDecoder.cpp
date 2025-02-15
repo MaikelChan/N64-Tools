@@ -4525,10 +4525,11 @@ void CMORTDecoder::Encode(unsigned char* data, int dataSize, unsigned char* outp
 									unsigned long T5 = ((int)(((((signed short)d * 0x2000) - 0x7000) * T4) + 0x4000) >> 0xF);
 									T5 = (int)(T5 + (1 << (T0 - 1))) >> T0; // Sort of round up when shifting?
 
-									if (abs((signed long)T5 - (signed long)valueCompare) < absDelta)
+									int delta = abs((int)T5 - (int)valueCompare);
+									if (delta < absDelta)
 									{
 										bestIndex60 = d;
-										absDelta = abs((int)T5 - (int)valueCompare);
+										absDelta = delta;
 										bestT5 = T5;
 									}
 								}
