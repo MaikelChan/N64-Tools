@@ -15192,7 +15192,7 @@ void CN64SoundListToolDlg::OnBnClickedMassimport()
             for (int s = 0; s < results[b].bank->inst[i]->soundCount; s++)
             {
                 CString tempExportNameStr;
-                tempExportNameStr.Format("%s\\BANK_%02X_INSTR_%04X_SND_%04X.wav", wavsPath, b, i, s);
+                tempExportNameStr.Format("%s\\BANK_%02X_INSTR_%04X_SND_%04X.wav", (LPCTSTR)wavsPath, b, i, s);
 
                 unsigned char* wavPCMData;
                 int rawLength;
