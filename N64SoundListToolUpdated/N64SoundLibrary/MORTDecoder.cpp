@@ -4380,6 +4380,9 @@ void CMORTDecoder::Encode(unsigned char* data, int dataSize, unsigned char* outp
 		}
 	}
 
+	signed short* predictorValuesData = predictorValues.data();
+	size_t predictorValuesSize = predictorValues.size();
+
 	WriteLongToBuffer(outputBuffer, 0, 0x4D4F5254); // MORT
 	outputBufferSize = 0xC;
 
@@ -4409,7 +4412,7 @@ void CMORTDecoder::Encode(unsigned char* data, int dataSize, unsigned char* outp
 	unsigned long S7 = 0;
 	signed long A3 = 0;
 
-	for (size_t x = 0; x < predictorValues.size(); x += 0xA0)
+	for (size_t x = 0; x < predictorValuesSize; x += 0xA0)
 	{
 		bool isAllZero = false;
 		if (numberResetPredictors == 0)
@@ -4426,7 +4429,7 @@ void CMORTDecoder::Encode(unsigned char* data, int dataSize, unsigned char* outp
 		{
 			numberResetPredictors++;
 			writeNumberResetPredictors = true;
-			for (size_t xx = x + 0xA0; xx < predictorValues.size(); xx += 0xA0)
+			for (size_t xx = x + 0xA0; xx < predictorValuesSize; xx += 0xA0)
 			{
 				if (
 					(std::find(allZeroSpots.begin(), allZeroSpots.end(), xx) != allZeroSpots.end())
@@ -4439,7 +4442,7 @@ void CMORTDecoder::Encode(unsigned char* data, int dataSize, unsigned char* outp
 			}
 		}
 
-		if ((!isAllZero && (numberSkipResetPredictors != 0)) || (isAllZero && (x == (predictorValues.size() - 0xA0))))
+		if ((!isAllZero && (numberSkipResetPredictors != 0)) || (isAllZero && (x == (predictorValuesSize - 0xA0))))
 		{
 			// Write out
 			WriteBitsTo80045FF0Buffer(outputBuffer, outputBufferSize, outputBufferBitOffset, 1, (int)true);
@@ -4514,7 +4517,7 @@ void CMORTDecoder::Encode(unsigned char* data, int dataSize, unsigned char* outp
 
 							for (int yy = 0; yy < 0xD; yy++)
 							{
-								unsigned long valueCompare = (signed short)predictorValues[testStartStackBuffer2 + x + (y * 0x28) + (yy * 3)];
+								unsigned long valueCompare = (signed short)predictorValuesData[testStartStackBuffer2 + x + (y * 0x28) + (yy * 3)];
 
 								int bestIndex60 = 0;
 								int absDelta = 0x7FFFFFFF;
@@ -4546,7 +4549,7 @@ void CMORTDecoder::Encode(unsigned char* data, int dataSize, unsigned char* outp
 								T1 = ((int)((T1 * (unsigned short)table80048738[testSPD0Table]) + 0x4000) >> 0xF);
 								bestPredictorsTemp[yy] = (unsigned short)(T1 + (signed short)stackBuffer2test[yy]);
 
-								signed long delta = (signed short)predictorValues[x + (y * 0x28) + yy] - (signed short)bestPredictorsTemp[yy];
+								signed long delta = (signed short)predictorValuesData[x + (y * 0x28) + yy] - (signed short)bestPredictorsTemp[yy];
 								unsigned long deltaAbs = abs(delta);
 								totalDeltaOffset += deltaAbs;
 							}
