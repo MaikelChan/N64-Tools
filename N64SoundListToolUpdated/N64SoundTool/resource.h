@@ -115,6 +115,7 @@
 #define IDC_T1FREQUENCYLABEL            1086
 #define IDC_T1FLAGSLABEL                1087
 #define IDC_EDITT1FLAGS                 1088
+#define IDC_MASSIMPORT                  1089
 #define IDC_LABELATTACKDRUM             1094
 #define IDC_LABELCOARSEDRUM             1095
 #define IDC_LABELFINETUNEDRUM           1096
@@ -208,9 +209,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        140
+#define _APS_NEXT_RESOURCE_VALUE        141
 #define _APS_NEXT_COMMAND_VALUE         32782
-#define _APS_NEXT_CONTROL_VALUE         1086
+#define _APS_NEXT_CONTROL_VALUE         1090
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

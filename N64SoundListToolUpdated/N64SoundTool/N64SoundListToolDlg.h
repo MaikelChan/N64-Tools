@@ -302,4 +302,5 @@ public:
 	afx_msg void OnBnClickedButtonplaysnd2();
 	CButton m_playLoopedButton;
 	std::vector<ALBank*> GetCombinedActiveBanks();
+	afx_msg void OnBnClickedMassimport();
 };

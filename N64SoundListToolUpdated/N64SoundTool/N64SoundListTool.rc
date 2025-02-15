@@ -16,13 +16,11 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (U.S.) resources
+// English (United States) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
-#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
-#endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
 /////////////////////////////////////////////////////////////////////////////
@@ -72,6 +70,7 @@ END
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\N64SoundListTool.ico"
 
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog
@@ -115,10 +114,10 @@ BEGIN
     PUSHBUTTON      "v",IDC_BUTTONDOWN,106,194,10,6,NOT WS_VISIBLE
     PUSHBUTTON      "Play",IDC_BUTTONPLAYSND,123,188,35,16,NOT WS_VISIBLE
     PUSHBUTTON      "16-bit Raw Wav",IDC_BUTTON1,286,177,84,17,NOT WS_VISIBLE
-    PUSHBUTTON      "16-Bit Raw Wav",IDC_BUTTONADDSOUND,286,316,85,17,NOT WS_VISIBLE
+    PUSHBUTTON      "16-Bit Raw Wav",IDC_BUTTONADDSOUND,286,328,85,17,NOT WS_VISIBLE
     PUSHBUTTON      "Delete",IDC_BUTTONDELETESOUND,230,171,36,16,NOT WS_VISIBLE
     PUSHBUTTON      "16-bit VADPCM Wav",IDC_BUTTONVADPCMIMPORT,286,196,84,17,NOT WS_VISIBLE
-    PUSHBUTTON      "16-Bit VADPCM Wav",IDC_BUTTONADDSOUND2,286,335,85,17,NOT WS_VISIBLE
+    PUSHBUTTON      "16-Bit VADPCM Wav",IDC_BUTTONADDSOUND2,286,347,85,17,NOT WS_VISIBLE
     PUSHBUTTON      "Save",IDC_BUTTONDELETESOUND2,230,188,36,16,NOT WS_VISIBLE
     RTEXT           "Base",IDC_STATIC,23,295,20,11
     EDITTEXT        IDC_EDITBASE,47,295,60,14,ES_AUTOHSCROLL | ES_READONLY
@@ -163,13 +162,13 @@ BEGIN
     PUSHBUTTON      "Rip Sound Bank",IDC_BUTTONRIP,119,46,58,16
     PUSHBUTTON      "TEST",IDC_BUTTONTEST,344,46,25,16,NOT WS_VISIBLE | WS_DISABLED
     PUSHBUTTON      "16-bit Raw",IDC_BUTTONIMPORT16BITRAW,286,236,84,17,NOT WS_VISIBLE
-    PUSHBUTTON      "16-Bit Raw",IDC_BUTTONEXPORTRAW,286,370,83,17
+    PUSHBUTTON      "16-Bit Raw",IDC_BUTTONEXPORTRAW,286,380,83,17
     PUSHBUTTON      "Import Predictors",IDC_BUTTONIMPORTPREDICTORS,286,255,83,18,NOT WS_VISIBLE
-    PUSHBUTTON      "Export Predictors",IDC_BUTTONEXPORTPREDITORS,286,389,83,18
+    PUSHBUTTON      "Export Predictors",IDC_BUTTONEXPORTPREDITORS,286,399,83,18
     GROUPBOX        "Sounds",IDC_STATIC,7,165,269,200
-    GROUPBOX        "Import",IDC_STATICIMPORTGROUPBOX,281,166,95,133,NOT WS_VISIBLE
-    GROUPBOX        "Add to End",IDC_STATICADDTOENDGROUPBOX,281,305,95,52,NOT WS_VISIBLE
-    GROUPBOX        "Export",IDC_STATICEXPORTGROUPBOX,281,359,93,53
+    GROUPBOX        "Import",IDC_STATICIMPORTGROUPBOX,281,166,95,150,NOT WS_VISIBLE
+    GROUPBOX        "Add to End",IDC_STATICADDTOENDGROUPBOX,281,316,95,52,NOT WS_VISIBLE
+    GROUPBOX        "Export",IDC_STATICEXPORTGROUPBOX,281,368,93,53
     GROUPBOX        "Instruments",IDC_STATIC,7,73,369,90
     GROUPBOX        "Trem",IDC_STATICTREMGROUPBOX,215,77,74,78,NOT WS_VISIBLE
     GROUPBOX        "Vibr",IDC_STATICVIBRGROUPBOX,295,77,74,78,NOT WS_VISIBLE
@@ -225,6 +224,7 @@ BEGIN
     LTEXT           "Flags",IDC_T1FLAGSLABEL,201,391,18,8,NOT WS_VISIBLE
     EDITTEXT        IDC_EDITT1FLAGS,221,389,47,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
     PUSHBUTTON      "Loop",IDC_BUTTONPLAYSND2,158,188,35,16,NOT WS_VISIBLE
+    PUSHBUTTON      "Mass Import",IDC_MASSIMPORT,286,295,83,18
 END
 
 IDD_DIALOGSPECIFYLOCATION DIALOGEX 0, 0, 134, 79
@@ -328,7 +328,7 @@ END
 //
 
 #ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO 
+GUIDELINES DESIGNINFO
 BEGIN
     IDD_N64SOUNDLISTTOOL_DIALOG, DIALOG
     BEGIN
@@ -362,7 +362,7 @@ END
 // Menu
 //
 
-IDR_MENUMAIN MENU 
+IDR_MENUMAIN MENU
 BEGIN
     POPUP "File"
     BEGIN
@@ -376,10 +376,21 @@ END
 
 /////////////////////////////////////////////////////////////////////////////
 //
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_N64SOUNDLISTTOOL_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
 // String Table
 //
 
-STRINGTABLE 
+STRINGTABLE
 BEGIN
     IDS_STRINGERRORREADINGCONFIG 
                             "Error reading gameconfigsound.ini, file must exist"
@@ -392,7 +403,7 @@ BEGIN
     IDS_STRINGERROROPENINGROMOUTPUT "Error opening ROM output"
 END
 
-#endif    // English (U.S.) resources
+#endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
